@@ -1,13 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charity Water Game</title>
+    <title>Water Collector</title>
+
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <h1>Welcome to the Charity Water Game Prototype</h1>
+
+    <!-- TITLE SCREEN -->
+
+    <div id="titleScreen" class="screen">
+
+        <h1>Every Drop Counts</h1>
+
+        <button id="playBtn">Play</button>
+
+    </div>
+
+
+    <!-- GAME SCREEN -->
+
+    <div id="gameScreen" class="screen hidden">
+
+        <div id="hud">
+
+            <div>Time: <span id="timer">60</span></div>
+
+            <div>Water: <span id="waterCount">0%</span></div>
+
+            <div>Bacteria: <span id="bacteriaCount">0%</span></div>
+
+            <div>Health: <span id="health">100</span>%</div>
+
+        </div>
+
+        <canvas id="gameCanvas" width="1000" height="600"></canvas>
+
+        <p class="instructions">
+            Collect water with E or the button. Avoid red virus particles!
+        </p>
+
+        <button id="collectButton" type="button">Hold to Collect Water</button>
+
+    </div>
+
+
+    <!-- GAME OVER -->
+
+    <div id="gameOver" class="screen hidden">
+
+        <h1 id="resultText"></h1>
+
+        <button onclick="location.reload()">
+            Play Again
+        </button>
+
+    </div>
+
+    <div id="confettiContainer" class="confetti-container" aria-hidden="true"></div>
+
     <script src="script.js"></script>
+
 </body>
+
 </html>
